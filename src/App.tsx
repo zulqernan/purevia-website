@@ -110,8 +110,7 @@ export default function PureviaWebsite() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollTo = (id: string) => {
+const scrollTo = function(id: string) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
