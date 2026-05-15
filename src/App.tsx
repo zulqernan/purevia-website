@@ -196,7 +196,15 @@ export default function PureviaWebsite() {
   };
 
   const navIds = ["home", "products", "custom", "delivery", "about", "contact"];
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
 
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+
+  setMenuOpen(false);
+};
   return (
     <div
       style={{
