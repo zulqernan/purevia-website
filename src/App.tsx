@@ -1,4 +1,3 @@
-// PUREVIA Website v2
 import React, { useState, useEffect, useRef } from "react";
 
 const NAV_LINKS = ["Home", "Products", "Custom Bottles", "Home Delivery", "About", "Contact"];
@@ -110,7 +109,8 @@ export default function PureviaWebsite() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-const scrollTo = function(id: string) {
+
+  const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
@@ -462,7 +462,7 @@ const scrollTo = function(id: string) {
       {/* ==================== HERO ==================== */}
       <section id="home" className="hero-bg" style={{ minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: 80 }}>
         {/* Floating water particles */}
-        {[...Array(8)].map((_, i) => (
+        {[...Array(8)].map((_: any, i) => (
           <div key={i} style={{
             position: "absolute",
             width: 8 + (i * 3), height: 8 + (i * 3),
@@ -667,8 +667,8 @@ const scrollTo = function(id: string) {
               { icon: "💰", title: "Best Value", desc: "Competitive pricing with subscription plans that save up to 40% vs retail.", color: "#f0fdf4" },
             ].map(item => (
               <div key={item.title} className="glass-card-light" style={{ padding: "32px 28px", transition: "all 0.3s", border: "1px solid #e0f2fe" }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,132,199,0.12)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+                onMouseEnter={(e: any) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(2,132,199,0.12)"; }}
+                onMouseLeave={(e: any) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
               >
                 <div style={{ fontSize: 40, marginBottom: 16 }}>{item.icon}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#0c1a3a", marginBottom: 10 }}>{item.title}</h3>
@@ -1152,7 +1152,7 @@ const scrollTo = function(id: string) {
             <div className="badge">FAQ</div>
             <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
-          {FAQS.map((faq, i) => (
+          {FAQS.map((faq: any, i) => (
             <div key={i} className="faq-item">
               <div
                 style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }}
@@ -1311,8 +1311,8 @@ const scrollTo = function(id: string) {
                 <h4 style={{ fontFamily: "'Playfair Display', serif", color: "white", fontSize: 16, fontWeight: 700, marginBottom: 20 }}>{col.title}</h4>
                 {col.links.map(link => (
                   <div key={link} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, marginBottom: 10, cursor: "pointer", transition: "color 0.3s" }}
-                    onMouseEnter={e => e.target.style.color = "#38bdf8"}
-                    onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.7)"}
+                    onMouseEnter={(e: any) => e.target.style.color = "#38bdf8"}
+                    onMouseLeave={(e: any) => e.target.style.color = "rgba(255,255,255,0.7)"}
                   >{link}</div>
                 ))}
               </div>
