@@ -1288,8 +1288,12 @@ export default function PureviaWebsite() {
                 Pakistan's premium bottled water brand. Delivering pure, refreshing water to homes, offices, and corporate events since 2018.
               </p>
               <div style={{ display: "flex", gap: 12, marginTop: 20 }}>
-                {["Facebook", "Instagram", "LinkedIn"].map(s => (
-                  <div key={s} style={{
+                {[
+                  { name: "Facebook", url: "https://www.facebook.com/zulqernain.mahar" },
+                  { name: "Instagram", url: "https://www.instagram.com/zulqernain.298/" },
+                  { name: "LinkedIn", url: "https://www.linkedin.com/in/zulqernain-maher-19a9732b5/" },
+                ].map(s => (
+                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" style={{
                     background: "rgba(255,255,255,0.08)",
                     borderRadius: 8,
                     padding: "8px 16px",
@@ -1297,7 +1301,10 @@ export default function PureviaWebsite() {
                     fontSize: 12,
                     cursor: "pointer",
                     transition: "all 0.3s",
-                  }}>{s}</div>
+                    color: "white",
+                    textDecoration: "none",
+                    display: "inline-block",
+                  }}>{s.name}</a>
                 ))}
               </div>
             </div>
